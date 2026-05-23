@@ -1,0 +1,6 @@
+{
+  "name": "LKPD Digital PBL",
+  "description": "Lembar Kerja Peserta Didik (LKPD) interaktif digital berbasis Problem-Based Learning untuk topik Struktur Bumi dan Mitigasi Bencana banjir di Aceh.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
