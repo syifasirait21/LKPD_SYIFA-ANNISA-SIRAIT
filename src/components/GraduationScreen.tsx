@@ -451,10 +451,10 @@ LANGKAH 5: MENGANALISIS & MENGEVALUASI
   };
 
   return (
-    <div id="graduation-screen-container" className="space-y-5 sm:space-y-8 text-slate-800 pb-6 animate-fade-in px-0">
+    <div id="graduation-screen-container" className="space-y-4 sm:space-y-6 text-slate-800 pb-6 animate-fade-in px-0">
       
       {/* 1. CELEBRATION BADGE & CONGRATULATION MESSAGE */}
-      <div className="text-center space-y-3 bg-gradient-to-br from-indigo-900 to-slate-900 p-4 sm:p-8 rounded-xl sm:rounded-3xl border border-indigo-950 text-white relative overflow-hidden shadow-lg animate-fade-in">
+      <div className="text-center space-y-2.5 bg-gradient-to-br from-indigo-900 to-slate-900 p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-indigo-950 text-white relative overflow-hidden shadow-md animate-fade-in">
         <div className="absolute -top-12 -left-12 w-32 h-32 bg-indigo-500/20 rounded-full blur-2xl pointer-events-none" />
         <div className="absolute -bottom-12 -right-12 w-32 h-32 bg-emerald-500/20 rounded-full blur-2xl pointer-events-none" />
         
@@ -467,7 +467,7 @@ LANGKAH 5: MENGANALISIS & MENGEVALUASI
             <Sparkles className="w-3 h-3 animate-pulse" />
             <span>SINI SELESAI</span>
           </span>
-          <h2 className="text-lg sm:text-2xl font-black uppercase tracking-tight text-white leading-tight">
+          <h2 className="text-base xs:text-lg sm:text-2xl font-black uppercase tracking-tight text-white leading-tight">
             Selamat, Kalian Sudah Menyelesaikan!
           </h2>
           <p className="text-[11px] sm:text-xs text-slate-300 max-w-md mx-auto leading-relaxed font-sans">
@@ -477,8 +477,8 @@ LANGKAH 5: MENGANALISIS & MENGEVALUASI
       </div>
 
       {/* 2. GROUP INFORMATION CARD */}
-      <div className="bg-white border border-slate-200 rounded-xl sm:rounded-3xl p-3.5 sm:p-5 shadow-sm space-y-3.5 relative">
-        <div className="flex items-center space-x-2 border-b border-rose-50 pb-2.5">
+      <div className="bg-white border border-slate-200 rounded-xl sm:rounded-2xl p-3 sm:p-5 shadow-sm space-y-3 relative">
+        <div className="flex items-center space-x-2 border-b border-rose-50 pb-2">
           <div className="w-7 h-7 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold shrink-0">
             <Users className="w-3.5 h-3.5" />
           </div>
@@ -486,60 +486,56 @@ LANGKAH 5: MENGANALISIS & MENGEVALUASI
             <h3 className="text-xs font-black uppercase tracking-wider text-slate-800">
               Informasi Kelompok Belajar
             </h3>
-            <p className="text-[10px] text-slate-500 font-medium font-sans">Data penanggung jawab pengisian instrumen</p>
+            <p className="text-[9px] sm:text-[10px] text-slate-500 font-medium font-sans">Data penanggung jawab pengisian instrumen</p>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-4">
-          <div className="space-y-2.5">
-            <div className="bg-slate-50 p-2.5 sm:p-3 rounded-lg sm:rounded-2xl border border-slate-100">
-              <span className="text-[10px] uppercase font-black tracking-wider text-slate-400 block mb-0.5 font-sans">
-                Ketua Kelompok
-              </span>
-              <p className="text-xs sm:text-sm font-black text-slate-800">
-                {state.studentLeader || state.studentName || "-"}
-              </p>
-            </div>
-
-            <div className="bg-slate-50 p-2.5 sm:p-3 rounded-lg sm:rounded-2xl border border-slate-100">
-              <span className="text-[10px] uppercase font-black tracking-wider text-slate-400 block mb-0.5 font-sans">
-                Kelas
-              </span>
-              <p className="text-xs sm:text-sm font-black text-slate-800">
-                {state.studentClass || "VII-A"}
-              </p>
-            </div>
+        <div className="grid grid-cols-2 gap-2 sm:gap-4 font-sans">
+          <div className="bg-slate-50 p-2 sm:p-3 rounded-lg sm:rounded-xl border border-slate-100">
+            <span className="text-[8px] sm:text-[9px] uppercase font-black tracking-wider text-slate-400 block mb-0.5">
+              Ketua Kelompok
+            </span>
+            <p className="text-xs sm:text-sm font-black text-slate-800 break-words leading-tight">
+              {state.studentLeader || state.studentName || "-"}
+            </p>
           </div>
 
-          <div className="space-y-2.5">
-            <div className="bg-slate-50 p-2.5 sm:p-3 rounded-lg sm:rounded-2xl border border-slate-100">
-              <span className="text-[10px] uppercase font-black tracking-wider text-slate-400 block mb-0.5 font-sans">
-                Nama Kelompok
-              </span>
-              <p className="text-xs sm:text-sm font-black text-indigo-600">
-                {state.studentGroup || "Kelompok 3"}
-              </p>
-            </div>
+          <div className="bg-slate-50 p-2 sm:p-3 rounded-lg sm:rounded-xl border border-slate-100">
+            <span className="text-[8px] sm:text-[9px] uppercase font-black tracking-wider text-slate-400 block mb-0.5">
+              Nama Kelompok
+            </span>
+            <p className="text-xs sm:text-sm font-black text-indigo-600 break-words leading-tight">
+              {state.studentGroup || "Kelompok 3"}
+            </p>
+          </div>
 
-            <div className="bg-slate-50 p-2.5 sm:p-3 rounded-lg sm:rounded-2xl border border-slate-100">
-              <span className="text-[10px] uppercase font-black tracking-wider text-slate-400 block mb-0.5 font-sans">
-                Anggota Kelompok
-              </span>
-              <p className="text-[11px] sm:text-xs text-slate-700 font-semibold leading-relaxed">
-                {membersList.length > 0 ? (
-                  membersList.join(", ")
-                ) : (
-                  <span className="text-slate-400 italic font-sans text-[11px]">Tidak ada anggota tambahan</span>
-                )}
-              </p>
+          <div className="bg-slate-50 p-2 sm:p-3 rounded-lg sm:rounded-xl border border-slate-100">
+            <span className="text-[8px] sm:text-[9px] uppercase font-black tracking-wider text-slate-400 block mb-0.5">
+              Kelas
+            </span>
+            <p className="text-xs sm:text-sm font-black text-slate-800 break-words leading-tight">
+              {state.studentClass || "VII-A"}
+            </p>
+          </div>
+
+          <div className="bg-slate-50 p-2 sm:p-3 rounded-lg sm:rounded-xl border border-slate-100">
+            <span className="text-[8px] sm:text-[9px] uppercase font-black tracking-wider text-slate-400 block mb-0.5">
+              Anggota Kelompok
+            </span>
+            <div className="text-[10px] sm:text-xs text-slate-700 font-semibold leading-normal break-words max-h-12 overflow-y-auto scrollbar-none">
+              {membersList.length > 0 ? (
+                membersList.join(", ")
+              ) : (
+                <span className="text-slate-400 italic text-[10px]">Tiada Anggota</span>
+              )}
             </div>
           </div>
         </div>
       </div>
 
       {/* 3. PROGRESS INDICATOR */}
-      <div className="bg-white border border-slate-200 rounded-xl sm:rounded-3xl p-3.5 sm:p-5 shadow-sm space-y-3.5">
-        <div className="flex items-center justify-between border-b border-indigo-50 pb-2.5 gap-2">
+      <div className="bg-white border border-slate-200 rounded-xl sm:rounded-2xl p-3 sm:p-5 shadow-sm space-y-3">
+        <div className="flex items-center justify-between border-b border-indigo-50 pb-2 gap-2">
           <h3 className="text-xs font-black uppercase tracking-wider text-slate-800 flex items-center gap-1.5">
             <CheckCircle className="w-4 h-4 text-emerald-500 shrink-0" />
             <span>Indikator Progress</span>
@@ -549,7 +545,7 @@ LANGKAH 5: MENGANALISIS & MENGEVALUASI
           </span>
         </div>
 
-        <div className="grid grid-cols-5 gap-0.5 xs:gap-1 pt-1">
+        <div className="grid grid-cols-5 gap-0.5 xs:gap-1 pt-0.5">
           {[
             { tag: "L1", title: "Orientasi" },
             { tag: "L2", title: "Organisasi" },
@@ -558,14 +554,14 @@ LANGKAH 5: MENGANALISIS & MENGEVALUASI
             { tag: "L5", title: "Evaluasi" },
           ].map((step, idx) => (
             <div key={idx} className="flex flex-col items-center text-center space-y-1">
-              <div className="w-6.5 h-6.5 sm:w-8 sm:h-8 rounded-full bg-emerald-500 text-white border border-emerald-100 flex items-center justify-center shadow-sm select-none font-sans shrink-0 font-extrabold text-[8px] sm:text-[10px]">
-                <Check className="w-3 h-3 sm:w-4 sm:h-4 stroke-[3]" />
+              <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-emerald-500 text-white border border-emerald-100 flex items-center justify-center shadow-sm select-none font-sans shrink-0 font-extrabold text-[8px] sm:text-[10px]">
+                <Check className="w-2.5 h-2.5 sm:w-4 sm:h-4 stroke-[3]" />
               </div>
               <div className="leading-tight">
                 <span className="text-[8px] sm:text-[9px] uppercase font-mono font-black text-slate-400 block">
                   {step.tag}
                 </span>
-                <span className="text-[10px] font-bold text-slate-700 hidden sm:inline">
+                <span className="text-[9px] sm:text-[10px] font-bold text-slate-750 hidden sm:inline">
                   {step.title}
                 </span>
               </div>
@@ -573,15 +569,15 @@ LANGKAH 5: MENGANALISIS & MENGEVALUASI
           ))}
         </div>
 
-        <div className="relative pt-1">
-          <div className="overflow-hidden h-2.5 text-xs flex rounded-full bg-slate-100">
+        <div className="relative pt-0.5">
+          <div className="overflow-hidden h-2 text-xs flex rounded-full bg-slate-100">
             <div className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-gradient-to-r from-emerald-500 to-indigo-600 w-full rounded-full transition-all duration-500" />
           </div>
         </div>
       </div>
 
       {/* PANEL PEMERIKSAAN JAWABAN (UNTUK GURU & MAHASISWA/SISWA) */}
-      <div className="bg-white border border-slate-200 rounded-xl sm:rounded-3xl p-3.5 sm:p-5 shadow-sm space-y-3.5">
+      <div className="bg-white border border-slate-200 rounded-xl sm:rounded-2xl p-3 sm:p-5 shadow-sm space-y-3">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between border-b border-slate-100 pb-2.5 gap-3">
           <div className="flex items-center space-x-2.5">
             <div className="w-8 h-8 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold shrink-0">
@@ -627,17 +623,17 @@ LANGKAH 5: MENGANALISIS & MENGEVALUASI
         </div>
 
         {isRecapExpanded && (
-          <div className="space-y-4 animate-fade-in text-left">
+          <div className="space-y-3 animate-fade-in text-left">
             {/* Steps tabs */}
-            <div className="flex border-b border-slate-100 overflow-x-auto gap-0.5 pb-1 scrollbar-none">
+            <div className="flex border-b border-slate-100 overflow-x-auto gap-1 pb-1 scrollbar-none">
               {[1, 2, 3, 4, 5].map(tab => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`px-3 py-1.5 text-[10px] font-extrabold uppercase rounded-lg border transition-all cursor-pointer whitespace-nowrap shrink-0 ${
+                  className={`px-2.5 py-1 text-[10px] sm:text-[11px] font-extrabold uppercase rounded-lg border transition-all cursor-pointer whitespace-nowrap shrink-0 ${
                     activeTab === tab
                       ? "bg-indigo-50 border-indigo-200 text-indigo-750 font-black"
-                      : "bg-transparent border-transparent text-slate-500 hover:text-slate-805 hover:bg-slate-50"
+                      : "bg-transparent border-transparent text-slate-500 hover:text-slate-800 hover:bg-slate-50"
                   }`}
                 >
                   Langkah {tab}
@@ -648,30 +644,30 @@ LANGKAH 5: MENGANALISIS & MENGEVALUASI
             {/* Tab content displays */}
             <div className="space-y-4 pt-1">
               {activeTab === 1 && (
-                <div className="space-y-3 p-3 sm:p-4 bg-indigo-50/20 border-l-4 border-indigo-500 rounded-r-xl sm:rounded-r-2xl">
-                  <div className="flex items-center gap-1.5 pb-2 border-b border-indigo-100/30">
+                <div className="space-y-3 p-2.5 sm:p-4 bg-indigo-50/25 border-l-4 border-indigo-500 rounded-r-lg sm:rounded-r-xl">
+                  <div className="flex items-center gap-1.5 pb-1.5 border-b border-indigo-100/30">
                     <span className="text-[10px] bg-indigo-100 text-indigo-700 font-black px-1.5 py-0.5 rounded uppercase font-mono">L1</span>
                     <h4 className="text-xs font-black text-slate-700 uppercase">Orientasi Masalah Kebencanaan</h4>
                   </div>
                   
-                  <div className="space-y-2.5 font-sans">
+                  <div className="space-y-2 font-sans">
                     <div>
-                      <span className="text-[9px] uppercase font-black tracking-wider text-slate-400 block">Masalah Utama</span>
-                      <p className="text-xs text-slate-700 leading-relaxed font-semibold bg-white p-2.5 rounded-xl border border-slate-150 mt-0.5 shadow-sm">
+                      <span className="text-[8px] sm:text-[9px] uppercase font-black tracking-wider text-slate-400 block">Masalah Utama</span>
+                      <p className="text-xs text-slate-700 leading-relaxed font-semibold bg-white p-2.5 rounded-lg border border-slate-200 mt-0.5 shadow-sm break-words whitespace-pre-wrap">
                         {state.langkah1?.masalahUtama || <span className="text-slate-400 italic">Belum diisi</span>}
                       </p>
                     </div>
 
                     <div>
-                      <span className="text-[9px] uppercase font-black tracking-wider text-slate-400 block">Penyebab Utama</span>
-                      <p className="text-xs text-slate-700 leading-relaxed font-semibold bg-white p-2.5 rounded-xl border border-slate-155 mt-0.5 shadow-sm">
+                      <span className="text-[8px] sm:text-[9px] uppercase font-black tracking-wider text-slate-400 block">Penyebab Utama</span>
+                      <p className="text-xs text-slate-700 leading-relaxed font-semibold bg-white p-2.5 rounded-lg border border-slate-200 mt-0.5 shadow-sm break-words whitespace-pre-wrap">
                         {state.langkah1?.penyebabUtama || <span className="text-slate-400 italic">Belum diisi</span>}
                       </p>
                     </div>
 
                     <div>
-                      <span className="text-[9px] uppercase font-black tracking-wider text-slate-400 block">Dampak Utama</span>
-                      <p className="text-xs text-slate-700 leading-relaxed font-semibold bg-white p-2.5 rounded-xl border border-slate-155 mt-0.5 shadow-sm">
+                      <span className="text-[8px] sm:text-[9px] uppercase font-black tracking-wider text-slate-400 block">Dampak Utama</span>
+                      <p className="text-xs text-slate-700 leading-relaxed font-semibold bg-white p-2.5 rounded-lg border border-slate-200 mt-0.5 shadow-sm break-words whitespace-pre-wrap">
                         {state.langkah1?.dampakUtama || <span className="text-slate-400 italic">Belum diisi</span>}
                       </p>
                     </div>
@@ -680,28 +676,28 @@ LANGKAH 5: MENGANALISIS & MENGEVALUASI
               )}
 
               {activeTab === 2 && (
-                <div className="space-y-3 p-3 sm:p-4 bg-sky-50/20 border-l-4 border-sky-500 rounded-r-xl sm:rounded-r-2xl">
-                  <div className="flex items-center gap-1.5 pb-2 border-b border-sky-100/30">
+                <div className="space-y-3 p-2.5 sm:p-4 bg-sky-50/20 border-l-4 border-sky-500 rounded-r-lg sm:rounded-r-xl">
+                  <div className="flex items-center gap-1.5 pb-1.5 border-b border-sky-100/30">
                     <span className="text-[10px] bg-sky-100 text-sky-700 font-black px-1.5 py-0.5 rounded uppercase font-mono">L2</span>
                     <h4 className="text-xs font-black text-slate-700 uppercase">Mengorganisasikan Siswa</h4>
                   </div>
 
-                  <div className="space-y-3 font-sans">
+                  <div className="space-y-2.5 font-sans">
                     <div>
-                      <span className="text-[9px] uppercase font-black tracking-wider text-slate-400 block">Faktor Terpilih</span>
+                      <span className="text-[8px] sm:text-[9px] uppercase font-black tracking-wider text-slate-400 block">Faktor Terpilih</span>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-1">
                         {(state.langkah2?.selectedFacts || []).length > 0 ? (
                           (state.langkah2?.selectedFacts || []).map(id => {
                             const item = FACTS_LIST.find(f => f.id === id);
                             return (
-                              <div key={id} className="bg-white p-2 rounded-xl border border-sky-100 text-left">
+                              <div key={id} className="bg-white p-2 rounded-lg border border-sky-100 text-left break-words">
                                 <p className="text-xs font-black text-sky-950">{item?.label || id}</p>
                                 <p className="text-[10px] text-slate-500 leading-tight mt-0.5">{item?.desc || ""}</p>
                               </div>
                             );
                           })
                         ) : (
-                          <div className="col-span-2 text-xs text-slate-400 italic bg-white p-3 rounded-xl border border-slate-150 text-center">
+                          <div className="col-span-2 text-xs text-slate-400 italic bg-white p-2.5 rounded-lg border border-slate-200 text-center">
                             Tidak ada faktor yang dipilih
                           </div>
                         )}
@@ -709,37 +705,37 @@ LANGKAH 5: MENGANALISIS & MENGEVALUASI
                     </div>
 
                     <div>
-                      <span className="text-[9px] uppercase font-black tracking-wider text-slate-400 block">Informasi Tambahan Lapangan</span>
-                      <p className="text-xs text-slate-700 leading-relaxed font-semibold bg-white p-2.5 rounded-xl border border-slate-150 mt-0.5 shadow-sm">
+                      <span className="text-[8px] sm:text-[9px] uppercase font-black tracking-wider text-slate-400 block">Informasi Tambahan Lapangan</span>
+                      <p className="text-xs text-slate-700 leading-relaxed font-semibold bg-white p-2.5 rounded-lg border border-slate-200 mt-0.5 shadow-sm break-words whitespace-pre-wrap">
                         {state.langkah2?.additionalInfo || <span className="text-slate-400 italic">Tidak ada tambahan</span>}
                       </p>
                     </div>
 
                     <div>
-                      <span className="text-[9px] uppercase font-black tracking-wider text-slate-400 block">Pengelompokan Faktor Kejadian</span>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-1">
-                        <div className="bg-white p-3 rounded-xl border border-slate-150">
+                      <span className="text-[8px] sm:text-[9px] uppercase font-black tracking-wider text-slate-400 block">Pengelompokan Faktor Kejadian</span>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-1">
+                        <div className="bg-white p-2.5 rounded-lg border border-slate-200">
                           <span className="text-[8px] bg-emerald-50 text-emerald-700 font-black px-1.5 py-0.5 rounded uppercase tracking-wider block w-max">Faktor Alami</span>
-                          <ul className="list-disc pl-4 text-[11px] text-slate-750 font-bold space-y-1 mt-1.5 leading-tight">
+                          <ul className="list-disc pl-4 text-[11px] text-slate-700 font-bold space-y-1 mt-1.5 leading-tight break-words">
                             {(state.langkah2?.categorization?.alami || []).length > 0 ? (
                               (state.langkah2?.categorization?.alami || []).map(id => (
                                 <li key={id}>{FACTS_LIST.find(f => f.id === id)?.label || id}</li>
                               ))
                             ) : (
-                              <span className="text-slate-400 italic">Kosong</span>
+                              <span className="text-slate-400 italic text-[10px]">Kosong</span>
                             )}
                           </ul>
                         </div>
 
-                        <div className="bg-white p-3 rounded-xl border border-slate-150">
+                        <div className="bg-white p-2.5 rounded-lg border border-slate-200">
                           <span className="text-[8px] bg-amber-50 text-amber-700 font-black px-1.5 py-0.5 rounded uppercase tracking-wider block w-max">Faktor Manusia</span>
-                          <ul className="list-disc pl-4 text-[11px] text-slate-750 font-bold space-y-1 mt-1.5 leading-tight">
+                          <ul className="list-disc pl-4 text-[11px] text-slate-700 font-bold space-y-1 mt-1.5 leading-tight break-words">
                             {(state.langkah2?.categorization?.manusia || []).length > 0 ? (
                               (state.langkah2?.categorization?.manusia || []).map(id => (
                                 <li key={id}>{FACTS_LIST.find(f => f.id === id)?.label || id}</li>
                               ))
                             ) : (
-                              <span className="text-slate-400 italic">Kosong</span>
+                              <span className="text-slate-400 italic text-[10px]">Kosong</span>
                             )}
                           </ul>
                         </div>
@@ -747,13 +743,13 @@ LANGKAH 5: MENGANALISIS & MENGEVALUASI
                     </div>
 
                     <div>
-                      <span className="text-[9px] uppercase font-black tracking-wider text-slate-400 block">Pertanyaan Penting Yang Perlu Dikaji</span>
-                      <div className="bg-white p-2.5 rounded-xl border border-slate-150 mt-0.5 shadow-sm space-y-1.5">
+                      <span className="text-[8px] sm:text-[9px] uppercase font-black tracking-wider text-slate-400 block">Pertanyaan Penting Yang Perlu Dikaji</span>
+                      <div className="bg-white p-2.5 rounded-lg border border-slate-200 mt-0.5 shadow-sm space-y-1.5">
                         {(state.langkah2?.thingsToLearn || []).filter(x => x.trim() !== "").length > 0 ? (
                           (state.langkah2?.thingsToLearn || []).filter(x => x.trim() !== "").map((q, idx) => (
                             <div key={idx} className="flex gap-2 text-xs">
-                              <span className="text-sky-600 font-mono font-black">#{idx + 1}</span>
-                              <p className="text-slate-700 font-semibold">{q}</p>
+                              <span className="text-sky-600 font-mono font-black shrink-0">#{idx + 1}</span>
+                              <p className="text-slate-700 font-semibold break-words">{q}</p>
                             </div>
                           ))
                         ) : (
@@ -766,31 +762,31 @@ LANGKAH 5: MENGANALISIS & MENGEVALUASI
               )}
 
               {activeTab === 3 && (
-                <div className="space-y-4 p-3 sm:p-4 bg-emerald-50/20 border-l-4 border-emerald-500 rounded-r-xl sm:rounded-r-2xl">
-                  <div className="flex items-center gap-1.5 pb-2 border-b border-emerald-100/30">
+                <div className="space-y-3 p-2.5 sm:p-4 bg-emerald-50/20 border-l-4 border-emerald-500 rounded-r-lg sm:rounded-r-xl">
+                  <div className="flex items-center gap-1.5 pb-1.5 border-b border-emerald-100/30">
                     <span className="text-[10px] bg-emerald-100 text-emerald-700 font-black px-1.5 py-0.5 rounded uppercase font-mono">L3</span>
                     <h4 className="text-xs font-black text-slate-700 uppercase">Membimbing Penyelidikan Mandiri & Kelompok</h4>
                   </div>
 
                   <div className="space-y-3 font-sans">
                     <div>
-                      <span className="text-[9px] uppercase font-black tracking-wider text-slate-400 block mb-1 font-sans">Hasil Observasi & Investigasi</span>
-                      <div className="space-y-2.5">
+                      <span className="text-[8px] sm:text-[9px] uppercase font-black tracking-wider text-slate-400 block mb-1 font-sans">Hasil Observasi & Investigasi</span>
+                      <div className="space-y-2">
                         {(state.langkah3?.investigationRows || []).map((row, idx) => (
-                          <div key={idx} className="bg-white p-3 rounded-xl border border-slate-150 space-y-1">
+                          <div key={idx} className="bg-white p-2.5 rounded-lg border border-slate-200 space-y-1">
                             <span className="text-[8px] bg-slate-100 text-slate-600 font-black px-1.5 py-0.5 rounded tracking-wide font-mono uppercase">{row.sumberInformasi || `Sumber #${idx+1}`}</span>
-                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1 font-sans">
+                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1 font-sans">
                               <div>
                                 <span className="text-[8px] uppercase tracking-wide font-black text-slate-400 block">Data ditemukan</span>
-                                <p className="text-[11px] text-slate-805 font-bold leading-relaxed">{row.dataDitemukan || <span className="text-slate-400 italic text-[10px]">Belum diisi</span>}</p>
+                                <p className="text-[11px] text-slate-800 font-bold leading-relaxed break-words whitespace-pre-wrap">{row.dataDitemukan || <span className="text-slate-400 italic text-[10px]">Belum diisi</span>}</p>
                               </div>
                               <div>
                                 <span className="text-[8px] uppercase tracking-wide font-black text-slate-400 block">Fakta Kebencanaan</span>
-                                <p className="text-[11px] text-slate-805 font-bold leading-relaxed">{row.faktaPenting || <span className="text-slate-400 italic text-[10px]">Belum diisi</span>}</p>
+                                <p className="text-[11px] text-slate-800 font-bold leading-relaxed break-words whitespace-pre-wrap">{row.faktaPenting || <span className="text-slate-400 italic text-[10px]">Belum diisi</span>}</p>
                               </div>
                               <div>
                                 <span className="text-[8px] uppercase tracking-wide font-black text-slate-400 block">Makna Hubungan</span>
-                                <p className="text-[11px] text-slate-805 font-bold leading-relaxed">{row.maknaHubungan || <span className="text-slate-400 italic text-[10px]">Belum diisi</span>}</p>
+                                <p className="text-[11px] text-slate-800 font-bold leading-relaxed break-words whitespace-pre-wrap">{row.maknaHubungan || <span className="text-slate-400 italic text-[10px]">Belum diisi</span>}</p>
                               </div>
                             </div>
                           </div>
@@ -799,8 +795,8 @@ LANGKAH 5: MENGANALISIS & MENGEVALUASI
                     </div>
 
                     <div>
-                      <span className="text-[9px] uppercase font-black tracking-wider text-slate-400 block font-sans">Temuan Menarik/Beda di Lapangan</span>
-                      <p className="text-xs text-slate-700 leading-relaxed font-semibold bg-white p-2.5 rounded-xl border border-slate-150 mt-0.5 shadow-sm">
+                      <span className="text-[8px] sm:text-[9px] uppercase font-black tracking-wider text-slate-400 block font-sans">Temuan Menarik/Beda di Lapangan</span>
+                      <p className="text-xs text-slate-700 leading-relaxed font-semibold bg-white p-2.5 rounded-lg border border-slate-200 mt-0.5 shadow-sm break-words whitespace-pre-wrap">
                         {state.langkah3?.shockingFact || <span className="text-slate-400 italic">Belum diisi</span>}
                       </p>
                     </div>
@@ -833,26 +829,26 @@ LANGKAH 5: MENGANALISIS & MENGEVALUASI
               )}
 
               {activeTab === 4 && (
-                <div className="space-y-3 p-3 sm:p-4 bg-amber-50/20 border-l-4 border-amber-500 rounded-r-xl sm:rounded-r-2xl">
-                  <div className="flex items-center gap-1.5 pb-2 border-b border-amber-100/30">
+                <div className="space-y-3 p-2.5 sm:p-4 bg-amber-50/20 border-l-4 border-amber-500 rounded-r-lg sm:rounded-r-xl">
+                  <div className="flex items-center gap-1.5 pb-1.5 border-b border-amber-100/30">
                     <span className="text-[10px] bg-amber-100 text-amber-700 font-black px-1.5 py-0.5 rounded uppercase font-mono">L4</span>
                     <h4 className="text-xs font-black text-slate-700 uppercase">Mengembangkan & Menyajikan Solusi</h4>
                   </div>
 
                   <div className="space-y-3 font-sans">
                     <div>
-                      <span className="text-[9px] uppercase font-black tracking-wider text-slate-400 block mb-1 font-sans">Gagasan Bank Solusi (4 Pilar)</span>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      <span className="text-[8px] sm:text-[9px] uppercase font-black tracking-wider text-slate-400 block mb-1">Gagasan Bank Solusi (4 Pilar)</span>
+                      <div className="grid grid-cols-2 gap-2">
                         {["pencegahan", "kesiapsiagaan", "penanganan", "pemulihan"].map(pilar => {
                           const list = (state.langkah4?.ideSolusi?.[pilar as keyof typeof state.langkah4.ideSolusi] || []) as string[];
                           return (
-                            <div key={pilar} className="bg-white p-2.5 rounded-xl border border-slate-150 text-left">
+                            <div key={pilar} className="bg-white p-2 sm:p-2.5 rounded-lg border border-slate-200 text-left">
                               <span className="text-[8px] font-black uppercase text-amber-600 tracking-wider block mb-1">{pilar}</span>
-                              <ul className="list-disc pl-4 text-[10px] text-slate-700 font-bold leading-snug space-y-0.5">
-                                {list.filter(x => x.trim()).length > 0 ? (
-                                  list.filter(x => x.trim()).map((x, i) => <li key={i}>{x}</li>)
+                              <ul className="list-disc pl-3 text-[10px] text-slate-705 font-bold leading-snug space-y-0.5 max-h-24 overflow-y-auto scrollbar-none break-words">
+                                {list.filter(x => x && x.trim()).length > 0 ? (
+                                  list.filter(x => x && x.trim()).map((x, i) => <li key={i}>{x}</li>)
                                 ) : (
-                                  <span className="text-slate-400 italic">Tidak ada</span>
+                                  <span className="text-slate-400 italic text-[10px]">Tiada gagasan</span>
                                 )}
                               </ul>
                             </div>
@@ -862,18 +858,18 @@ LANGKAH 5: MENGANALISIS & MENGEVALUASI
                     </div>
 
                     <div>
-                      <span className="text-[9px] uppercase font-black tracking-wider text-slate-400 block mb-1 font-sans">Formulasi Solusi Terbaik Setiap Pilar</span>
-                      <div className="space-y-2">
+                      <span className="text-[8px] sm:text-[9px] uppercase font-black tracking-wider text-slate-400 block mb-1">Formulasi Solusi Terbaik Setiap Pilar</span>
+                      <div className="space-y-1.5">
                         {["pencegahan", "kesiapsiagaan", "penanganan", "pemulihan"].map(pilar => {
                           const detail = state.langkah4?.solusiTerbaik?.[pilar as keyof typeof state.langkah4.solusiTerbaik];
                           return (
-                            <div key={pilar} className="bg-white p-2.5 rounded-xl border border-slate-150">
+                            <div key={pilar} className="bg-white p-2 sm:p-2.5 rounded-lg border border-slate-200">
                               <span className="text-[8px] font-black uppercase text-amber-700 block tracking-wider mb-0.5">{pilar}</span>
-                              <p className="text-[11px] font-black text-slate-800 leading-tight">
+                              <p className="text-[11px] font-black text-slate-805 leading-tight break-words">
                                 {detail?.solusi || <span className="text-slate-400 italic">Belum dirumuskan</span>}
                               </p>
                               {detail?.alasan && (
-                                <p className="text-[10px] text-slate-500 italic mt-1 leading-tight">Alasan: {detail.alasan}</p>
+                                <p className="text-[10px] text-slate-500 italic mt-0.5 leading-snug break-words">Alasan: {detail.alasan}</p>
                               )}
                             </div>
                           );
@@ -882,22 +878,22 @@ LANGKAH 5: MENGANALISIS & MENGEVALUASI
                     </div>
 
                     <div>
-                      <span className="text-[9px] uppercase font-black tracking-wider text-slate-400 block">Rancangan Media & Teknis</span>
-                      <div className="bg-white p-3 rounded-xl border border-slate-150 mt-1 space-y-2">
+                      <span className="text-[8px] sm:text-[9px] uppercase font-black tracking-wider text-slate-400 block">Rancangan Media & Teknis</span>
+                      <div className="bg-white p-2.5 sm:p-3 rounded-lg border border-slate-200 mt-1 space-y-2">
                         <div>
                           <span className="text-[8px] uppercase tracking-wide font-black text-slate-400 block">Media Penyajian</span>
-                          <p className="text-[11px] text-slate-800 font-extrabold leading-tight">
+                          <p className="text-[11px] text-slate-800 font-extrabold leading-tight break-words">
                             {(state.langkah4?.mediaPenyajian || []).join(", ")} {state.langkah4?.mediaPenyajianLainnya ? `(Lainnya: ${state.langkah4.mediaPenyajianLainnya})` : ""}
                           </p>
                         </div>
                         <div>
                           <span className="text-[8px] uppercase tracking-wide font-black text-slate-400 block">Deskripsi Teknis Rancangan</span>
-                          <p className="text-[11px] text-slate-800 font-semibold leading-relaxed mt-0.5 whitespace-pre-wrap">{state.langkah4?.rancanganSolusi || "-"}</p>
+                          <p className="text-[11px] text-slate-800 font-semibold leading-relaxed mt-0.5 whitespace-pre-wrap break-words">{state.langkah4?.rancanganSolusi || "-"}</p>
                         </div>
                         <div>
                           <span className="text-[8px] uppercase tracking-wide font-black text-slate-400 block">Poin-Poin Pokok Alur Sajian</span>
-                          <ol className="list-decimal pl-4 text-[10px] text-slate-700 font-bold space-y-0.5 mt-0.5 leading-tight">
-                            {(state.langkah4?.sajianPoin || []).filter(x => x.trim()).map((pt, i) => (
+                          <ol className="list-decimal pl-4 text-[10px] text-slate-705 font-bold space-y-0.5 mt-0.5 leading-tight break-words">
+                            {(state.langkah4?.sajianPoin || []).filter(x => x && x.trim()).map((pt, i) => (
                               <li key={i}>{pt}</li>
                             ))}
                           </ol>
@@ -909,33 +905,33 @@ LANGKAH 5: MENGANALISIS & MENGEVALUASI
               )}
 
               {activeTab === 5 && (
-                <div className="space-y-4 p-3 sm:p-4 bg-rose-50/20 border-l-4 border-rose-500 rounded-r-xl sm:rounded-r-2xl">
-                  <div className="flex items-center gap-1.5 pb-2 border-b border-rose-100/30">
+                <div className="space-y-3 p-2.5 sm:p-4 bg-rose-50/20 border-l-4 border-rose-500 rounded-r-lg sm:rounded-r-xl">
+                  <div className="flex items-center gap-1.5 pb-1.5 border-b border-rose-100/30">
                     <span className="text-[10px] bg-rose-100 text-rose-700 font-black px-1.5 py-0.5 rounded uppercase font-mono">L5</span>
                     <h4 className="text-xs font-black text-slate-700 uppercase">Analisis & Evaluasi Solusi Mitigasi</h4>
                   </div>
 
                   <div className="space-y-3 font-sans">
                     <div>
-                      <span className="text-[9px] uppercase font-black tracking-wider text-slate-400 block mb-1 font-sans">Skor Uji Kelayakan & Bobot Dampak</span>
+                      <span className="text-[8px] sm:text-[9px] uppercase font-black tracking-wider text-slate-400 block mb-1">Skor Uji Kelayakan & Bobot Dampak</span>
                       <div className="space-y-1.5">
                         {(state.langkah5?.evaluasiBaris || []).map((row, idx) => (
-                          <div key={idx} className="bg-white p-2.5 rounded-xl border border-slate-150">
-                            <p className="text-xs font-black text-rose-950 leading-tight">{row.solusi}</p>
-                            <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 sm:gap-2 pt-1.5 text-center text-slate-500 font-mono text-[8px] sm:text-[9px] font-black">
-                              <div className="bg-rose-50/40 p-1 rounded-md border border-rose-100/40">
+                          <div key={idx} className="bg-white p-2.5 rounded-lg border border-slate-200">
+                            <p className="text-xs font-black text-slate-850 leading-tight break-words">{row.solusi}</p>
+                            <div className="grid grid-cols-4 gap-1 sm:gap-2 pt-1.5 text-center text-slate-500 font-mono text-[8px] sm:text-[9px] font-black">
+                              <div className="bg-rose-50/30 p-1 rounded border border-rose-100/40">
                                 <span className="block text-slate-400 uppercase text-[6px] sm:text-[7px]">Layak</span>
                                 <span className="text-rose-700">{row.kelayakan}/4</span>
                               </div>
-                              <div className="bg-emerald-50/40 p-1 rounded-md border border-emerald-100/40">
+                              <div className="bg-emerald-50/30 p-1 rounded border border-emerald-100/40">
                                 <span className="block text-slate-400 uppercase text-[6px] sm:text-[7px]">Efektif</span>
                                 <span className="text-emerald-700">{row.efektivitas}/4</span>
                               </div>
-                              <div className="bg-sky-50/40 p-1 rounded-md border border-sky-100/40">
+                              <div className="bg-sky-50/30 p-1 rounded border border-sky-100/40">
                                 <span className="block text-slate-400 uppercase text-[6px] sm:text-[7px]">Dampak</span>
                                 <span className="text-sky-700">{row.dampakPositif}/4</span>
                               </div>
-                              <div className="bg-amber-50/40 p-1 rounded-md border border-amber-100/40">
+                              <div className="bg-amber-50/30 p-1 rounded border border-amber-100/40">
                                 <span className="block text-slate-400 uppercase text-[6px] sm:text-[7px]">Lanjut</span>
                                 <span className="text-amber-700">{row.keberlanjutan}/4</span>
                               </div>
@@ -946,47 +942,47 @@ LANGKAH 5: MENGANALISIS & MENGEVALUASI
                     </div>
 
                     <div>
-                      <span className="text-[9px] uppercase font-black tracking-wider text-slate-400 block font-sans">Solusi Terpilih Kelompok & Analisis</span>
-                      <div className="bg-white p-3 rounded-xl border border-slate-150 space-y-2 mt-0.5 shadow-sm">
+                      <span className="text-[8px] sm:text-[9px] uppercase font-black tracking-wider text-slate-400 block">Solusi Terpilih Kelompok & Analisis</span>
+                      <div className="bg-white p-2.5 rounded-lg border border-slate-200 space-y-2 mt-0.5 shadow-sm">
                         <div>
                           <span className="text-[8px] uppercase tracking-wide font-black text-rose-500 block">Rekomendasi Utama Terbaik</span>
-                          <p className="text-xs font-black text-slate-900 leading-tight">{state.langkah5?.analisisTerbaik || "-"}</p>
+                          <p className="text-xs font-black text-slate-900 leading-tight break-words">{state.langkah5?.analisisTerbaik || "-"}</p>
                         </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1 border-t border-slate-100/70">
+                        <div className="grid grid-cols-2 gap-2 pt-1 border-t border-slate-100/70">
                           <div>
                             <span className="text-[8px] uppercase tracking-wide font-black text-emerald-600 block">Kelebihan Solusi</span>
-                            <p className="text-[11px] text-slate-700 leading-snug font-semibold mt-0.5">{state.langkah5?.kelebihanSolusi || "-"}</p>
+                            <p className="text-[10px] text-slate-700 leading-snug font-semibold mt-0.5 break-words">{state.langkah5?.kelebihanSolusi || "-"}</p>
                           </div>
                           <div>
                             <span className="text-[8px] uppercase tracking-wide font-black text-rose-600 block">Kelemahan Solusi</span>
-                            <p className="text-[11px] text-slate-700 leading-snug font-semibold mt-0.5">{state.langkah5?.kelemahanSolusi || "-"}</p>
+                            <p className="text-[10px] text-slate-700 leading-snug font-semibold mt-0.5 break-words">{state.langkah5?.kelemahanSolusi || "-"}</p>
                           </div>
                         </div>
                       </div>
                     </div>
 
                     <div>
-                      <span className="text-[9px] uppercase font-black tracking-wider text-slate-400 block mb-1 font-sans">Rencana Nyata Memperbaiki Kelemahan</span>
-                      <div className="space-y-2">
+                      <span className="text-[8px] sm:text-[9px] uppercase font-black tracking-wider text-slate-400 block mb-1">Rencana Nyata Memperbaiki Kelemahan</span>
+                      <div className="space-y-1.5">
                         {(state.langkah5?.perbaikanSolusiBaris || []).map((row, idx) => (
-                          <div key={idx} className="bg-white p-2.5 rounded-xl border border-slate-150 space-y-1.5 text-xs font-sans">
-                            <div className="flex justify-between items-center bg-rose-50/30 p-1.5 rounded-lg border border-rose-100/30">
-                              <span className="font-mono font-black text-[9px] text-rose-700 shrink-0">PERBAIKAN #{idx + 1}</span>
-                              <span className="text-[10px] text-slate-800 font-extrabold truncate ml-2">{row.solusiPerluDiperbaiki}</span>
+                          <div key={idx} className="bg-white p-2 rounded-lg border border-slate-200 space-y-1.5 text-xs font-sans">
+                            <div className="flex justify-between items-center bg-rose-50/20 p-1 rounded border border-rose-150/20">
+                              <span className="font-mono font-black text-[9px] text-rose-750 shrink-0">PERBAIKAN #{idx + 1}</span>
+                              <span className="text-[10px] text-slate-800 font-extrabold truncate ml-2 break-content">{row.solusiPerluDiperbaiki}</span>
                             </div>
-                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-[10px] leading-tight text-slate-600 pt-0.5">
-                              <div>
-                                <span className="font-extrabold text-[8px] text-slate-400 block uppercase">Bagian Lemah</span>
-                                <span className="font-semibold text-slate-800">{row.bagianPerluDiperbaiki || "-"}</span>
+                            <div className="grid grid-cols-3 gap-1.5 text-[9px] sm:text-[10px] leading-tight text-slate-600 pt-0.5">
+                              <div className="break-words">
+                                <span className="font-extrabold text-[7.5px] sm:text-[8px] text-slate-400 block uppercase">Bagian Lemah</span>
+                                <span className="font-semibold text-slate-750">{row.bagianPerluDiperbaiki || "-"}</span>
                               </div>
-                              <div>
-                                <span className="font-extrabold text-[8px] text-slate-400 block uppercase">Rencana Solutif</span>
-                                <span className="font-semibold text-slate-800">{row.rencanaPerbaikan || "-"}</span>
+                              <div className="break-words">
+                                <span className="font-extrabold text-[7.5px] sm:text-[8px] text-slate-400 block uppercase">Rencana Solutif</span>
+                                <span className="font-semibold text-slate-750">{row.rencanaPerbaikan || "-"}</span>
                               </div>
-                              <div>
-                                <span className="font-extrabold text-[8px] text-slate-400 block uppercase">Siapa & Sumber Daya</span>
-                                <span className="font-semibold text-slate-800 block">{row.siapamelakukan || "-"}</span>
-                                <span className="text-[9px] text-slate-500 italic">Alat: {row.sumberDayaDibutuhkan || "-"}</span>
+                              <div className="break-words font-sans">
+                                <span className="font-extrabold text-[7.5px] sm:text-[8px] text-slate-400 block uppercase">Siapa & Alat</span>
+                                <span className="font-semibold text-slate-750 block">{row.siapamelakukan || "-"}</span>
+                                <span className="text-[8.5px] text-slate-500 italic block">Media: {row.sumberDayaDibutuhkan || "-"}</span>
                               </div>
                             </div>
                           </div>
@@ -1002,37 +998,37 @@ LANGKAH 5: MENGANALISIS & MENGEVALUASI
       </div>
 
       {/* 4. FEEDBACK FORM CARD */}
-      <div className="bg-white border border-slate-200 rounded-xl sm:rounded-3xl p-3.5 sm:p-5 shadow-sm space-y-3.5 animate-fade-in animate-duration-300">
-        <h3 className="text-xs font-black uppercase tracking-wider text-slate-800 flex items-center gap-1.5 border-b border-slate-100 pb-2.5">
+      <div className="bg-white border border-slate-200 rounded-xl sm:rounded-2xl p-3 sm:p-5 shadow-sm space-y-3 animate-fade-in animate-duration-300">
+        <h3 className="text-xs font-black uppercase tracking-wider text-slate-800 flex items-center gap-1.5 border-b border-slate-100 pb-2">
           <Star className="w-4 h-4 text-amber-500 fill-amber-300 shrink-0" />
           <span>Formulir Umpan Balik LKPD PBL</span>
         </h3>
 
         {submittedFeedback ? (
-          <div className="bg-indigo-50/80 border border-indigo-150 p-4 rounded-2xl text-center space-y-2.5 animate-fade-in text-slate-800">
-            <div className="w-10 h-10 bg-indigo-100 text-indigo-700 rounded-full flex items-center justify-center mx-auto shadow-sm">
-              <Check className="w-5 h-5 stroke-[3]" />
+          <div className="bg-indigo-50/80 border border-indigo-150 p-3 sm:p-4 rounded-xl text-center space-y-2.5 animate-fade-in text-slate-800 font-sans">
+            <div className="w-9 h-9 bg-indigo-100 text-indigo-700 rounded-full flex items-center justify-center mx-auto shadow-sm">
+              <Check className="w-4.5 h-4.5 stroke-[3]" />
             </div>
-            <h4 className="text-sm font-black text-indigo-950">Terima Kasih Atas Umpan Baliknya!</h4>
-            <p className="text-xs text-indigo-700 leading-relaxed max-w-sm mx-auto font-medium">
+            <h4 className="text-xs sm:text-sm font-black text-indigo-950">Terima Kasih Atas Umpan Baliknya!</h4>
+            <p className="text-[11px] sm:text-xs text-indigo-700 leading-relaxed max-w-sm mx-auto font-medium">
               Umpan balik kelompok Anda ({rating} dari 5 Bintang) berhasil direkam secara aman. Masukan Anda sangat berarti bagi pengembangan media ajar interaktif ini!
             </p>
             <button
               type="button"
               onClick={() => setSubmittedFeedback(false)}
-              className="text-[10px] uppercase font-black text-indigo-600 hover:underline tracking-widest cursor-pointer font-sans"
+              className="text-[9px] uppercase font-black text-indigo-600 hover:underline tracking-widest cursor-pointer font-sans"
             >
               Ubah Tanggapan
             </button>
           </div>
         ) : (
-          <div className="space-y-3.5">
-            <div className="space-y-2 text-center">
-              <label className="text-[10px] font-black uppercase text-slate-500 tracking-wider block font-sans">
+          <div className="space-y-3">
+            <div className="space-y-1.5 text-center">
+              <label className="text-[9px] sm:text-[10px] font-black uppercase text-slate-505 tracking-wider block font-sans">
                 Seberapa menarik dan mendidik aplikasi LKPD ini menurut Anda?
               </label>
               
-              <div className="flex justify-center items-center gap-1.5 py-1">
+              <div className="flex justify-center items-center gap-1.5 py-0.5">
                 {[1, 2, 3, 4, 5].map((star) => {
                   const isGold = (hoverRating || rating) >= star;
                   return (
@@ -1046,7 +1042,7 @@ LANGKAH 5: MENGANALISIS & MENGEVALUASI
                       title={`${star} Bintang`}
                     >
                       <Star
-                        className={`w-7.5 h-7.5 transition-all ${
+                        className={`w-7 h-7 sm:w-8 sm:h-8 transition-all ${
                           isGold 
                             ? "fill-amber-400 text-amber-500 stroke-[1.5]" 
                             : "text-slate-300 stroke-[1.5]"

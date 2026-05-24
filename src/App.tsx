@@ -1,25 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { 
-  Menu, 
-  X, 
-  Wifi, 
-  Battery, 
-  RotateCcw, 
-  Smartphone, 
-  Sparkles, 
-  Grid, 
-  MapPin, 
-  Compass, 
-  BookOpen, 
-  CheckCircle2, 
-  Users 
-} from "lucide-react";
+import { RotateCcw } from "lucide-react";
 import { WorkbookState } from "./types";
 import { INITIAL_WORKBOOK_STATE } from "./data";
 
 // Import custom views
 import StartScreen from "./components/StartScreen";
-import SintaksSidebar from "./components/SintaksSidebar";
 import Langkah1 from "./components/Langkah1";
 import Langkah2 from "./components/Langkah2";
 import Langkah3 from "./components/Langkah3";
@@ -62,21 +47,6 @@ export default function App() {
 
   const [currentStep, setCurrentStep] = useState<number>(1);
   const [completedSteps, setCompletedSteps] = useState<number[]>([]);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [deviceTime, setDeviceTime] = useState("14:28");
-
-  // Keep device status bar clock updated!
-  useEffect(() => {
-    const updateTime = () => {
-      const d = new Date();
-      let hours = String(d.getHours()).padStart(2, "0");
-      let minutes = String(d.getMinutes()).padStart(2, "0");
-      setDeviceTime(`${hours}:${minutes}`);
-    };
-    updateTime();
-    const interval = setInterval(updateTime, 60000);
-    return () => clearInterval(interval);
-  }, []);
 
   // Sync state to local storage on save changes
   const updateState = (updater: (draft: WorkbookState) => void) => {
@@ -162,30 +132,6 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-emerald-50 flex font-sans overflow-x-hidden antialiased select-none selection:bg-emerald-200 selection:text-emerald-900">
       
-      {/* SINTAKS SIDEBAR (Left timeline navigation on desktop/tablet viewports) */}
-      <div className="hidden md:block shrink-0 h-screen sticky top-0 overflow-y-auto">
-        <SintaksSidebar 
-          currentStep={page === "workbook" ? currentStep : 0} 
-          onStepChange={(step) => {
-            if (page === "start") {
-              updateState((draft) => {
-                if (!draft.studentLeader.trim()) draft.studentLeader = "Siswa Mandiri";
-                if (!draft.studentMembers) {
-                  draft.studentMembers = [];
-                }
-                const activeMembers = draft.studentMembers.filter(m => m.trim() !== "");
-                draft.studentName = draft.studentLeader + (activeMembers.length > 0 ? " & " + activeMembers.join(", ") : "");
-                if (!draft.studentGroup.trim()) draft.studentGroup = "Kelompok 1";
-                if (!draft.studentClass.trim()) draft.studentClass = "Kelas VII-A";
-              });
-            }
-            setPage("workbook");
-            setCurrentStep(step);
-          }}
-          completedSteps={completedSteps} 
-        />
-      </div>
-
       {/* MAIN WORKSPACE SCREEN CONTAINER (Full Screen / Full width area) */}
       <div className="flex-1 flex flex-col min-h-screen bg-transparent relative">
         
@@ -326,51 +272,6 @@ export default function App() {
             )}
           </div>
         </main>
-
-
-
-        {/* ------------------------------------------------------------ */}
-        {/* MOBILE OVERLAY SIDE DRAWER (Menu on phone/tablet views)      */}
-        {/* ------------------------------------------------------------ */}
-        {isMobileMenuOpen && (
-          <div className="fixed inset-0 bg-black/80 z-50 flex animate-fade-in md:hidden">
-            <div className="w-80 shrink-0 h-full relative">
-              {/* Close Button overlay */}
-              <button
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="absolute top-4 right-4 z-50 p-2 text-white bg-slate-800 rounded-full border border-slate-700 active:scale-95 cursor-pointer"
-                title="Tutup Menu"
-              >
-                <X className="w-5 h-5" />
-              </button>
-
-              <SintaksSidebar 
-                currentStep={page === "workbook" ? currentStep : 0} 
-                onStepChange={(step) => {
-                  if (page === "start") {
-                    updateState((draft) => {
-                      if (!draft.studentLeader.trim()) draft.studentLeader = "Siswa Mandiri";
-                      if (!draft.studentMembers) {
-                        draft.studentMembers = [];
-                      }
-                      const activeMembers = draft.studentMembers.filter(m => m.trim() !== "");
-                      draft.studentName = draft.studentLeader + (activeMembers.length > 0 ? " & " + activeMembers.join(", ") : "");
-                      if (!draft.studentGroup.trim()) draft.studentGroup = "Kelompok 1";
-                      if (!draft.studentClass.trim()) draft.studentClass = "Kelas VII-A";
-                    });
-                  }
-                  setPage("workbook");
-                  setCurrentStep(step);
-                  setIsMobileMenuOpen(false);
-                }}
-                completedSteps={completedSteps} 
-              />
-            </div>
-            
-            {/* Click backdrop to exit */}
-            <div className="flex-1 h-full" onClick={() => setIsMobileMenuOpen(false)} />
-          </div>
-        )}
 
       </div>
     </div>
